@@ -16,7 +16,7 @@ logger.level = "info";
 
 
 const server: http.Server = http.createServer(function (req, res) {
-
+    if (req.url === '/') {
         const uuid:string = crypto.randomUUID();
 
         logger.info(`Get request for ${req.url} with ${req.method} method with id=${uuid}`);
@@ -28,6 +28,11 @@ const server: http.Server = http.createServer(function (req, res) {
         res.write(html);
         res.end();
         logger.info(`Send 'hello world' for request with id=${uuid}`);
+    } else {
+        res.writeHead(404, {'Content-Type': 'text/plain'});
+        res.write('Page Not Found!');
+        res.end();
+    }
 })
 
 server.listen(3000, () => {
