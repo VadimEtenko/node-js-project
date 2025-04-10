@@ -1,0 +1,25 @@
+{
+  "name": "my_nodejs_project",
+  "version": "1.0.0",
+  "main": "src/server.ts",
+  "type": "commonjs",
+  "scripts": {
+    "test": "test",
+    "lint": "eslint",
+    "start": "npm run lint && ts-node ./src/server.ts"
+  },
+  "author": "Vadim",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/node": "^22.14.0",
+    "eslint": "^9.24.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.1"
+  },
+  "dependencies": {
+    "log4js": "^6.9.1"
+  }
+}
